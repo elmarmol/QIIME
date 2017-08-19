@@ -1,0 +1,56 @@
+source("https://bioconductor.org/biocLite.R")
+biocLite("phyloseq")
+library("phyloseq")
+biocLite("ggplot2")
+library("ggplot2")
+biocLite("ape")
+library("ape")
+biocLite("RColorBrewer")
+library("RColorBrewer")
+install.packages("tidyverse")
+library("tidyverse")
+install.packages("highcharter")
+library("highcharter")
+
+getwd()
+
+setwd("G:/Q3Div/")
+
+
+# Import OTU table and phylogenetic tree
+biom_data <- import_biom(BIOMfilename = "otu_table_json.biom", treefilename = "rep_set.tre", parseFunction = parse_taxonomy_default)
+
+# Import QIIME mapping file
+mapping <- import_qiime_sample_data(mapfilename = "mapping_maize.txt")
+
+# Merge the OTU and mapping data into a phyloseq object
+phylo <- merge_phyloseq(biom_data, mapping)
+
+
+# Exploring our data
+phylo
+rank_names(phylo)
+colnames(tax_table(run1)) <- c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species")
+nsamples(phylo)
+ntaxa(phylo)
+sum(taxa_sums(phylo))
+
+
+# Number of OTU's before filtering
+ntaxa(phylo) # 19216
+
+# Logic statment to find any OTU's that have less than 2 sequences
+any(taxa_sums(phylo) <= 2) # TRUE
+
+# Prune taxa with low OTU count
+phylo_filtered = prune_taxa(taxa_sums(phylo) >= 2, phylo)
+
+# Count number of OTU's after filtering
+ntaxa(phylo_filtered) # 16854
+
+
+depths <- sample_sums(phylo)
+summary(depths)
+
+
+hist(depths, breaks = 20)

@@ -1,0 +1,25 @@
+# Install Qiime on Bash Windows
+
+# The Ubuntu directory created on windows is:
+
+'C:\Users\[Usuario]\AppData\Local\lxss'
+
+# To access the directories and files of windows we must type $ /mnt/ before each literal assigned to each unit.
+
+$ cd /mnt/c/Users/
+
+# Linux Miniconda install
+
+$ bash Miniconda3-latest-Linux-x86_64.sh
+
+## Before run conda reboot bash
+
+$ conda update conda
+
+###  If you have connection problems when running the command, disable the antivirus while updating.
+
+## More info: https://conda.io/miniconda.html
+
+# Create a new environment into conda with the installation of Qiime 1.9.1
+
+$ conda create -n Qiime python=2.7 qiime matplotlib=1.4.3 mock nose -c bioconda
