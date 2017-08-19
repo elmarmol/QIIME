@@ -1,5 +1,5 @@
 
-# Install Github Bash 
+# Install Github Bash
 # Fuente http://www.cristalab.com/tutoriales/introduccion-a-github-en-linux-ubuntu-c106086l/
 
 
@@ -17,3 +17,5 @@ $	ssh-keygen
 
 $	cat /root/.ssh/id_rsa.pub
 
+## Output
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDigerlT0APiUVwmao1NVM0n90cmU5o7YQIk+lYAYMFqhIaFJq+3kaVhHR8+B2dgRj80Z6aP3lwokWiod75Z0QCc9JUkqGGdKAsKjcEGxhTrqsuCMr/Umuqg56o4eOzjIIuPTo61UYUyzw7ITjOpwfxT28Y87Bf8HU4XkA/+4hOKC8OV/Tm9ytpVNOf1d8uzaPagafM6Twz96DEba1+DSxFohCB97To0DSAr0IyAoPPUSbEDm7abvH6e/YgsO5mky9JOu4ZCk7ADpeAucjrQ6q5Gzl1rATn8Csn/5Y81J/ZFE8G9VOz5hpeDyk/ssvkgqr0ON7NJ3teGcpsalNcwnpj WThinkCentre@M78TC
