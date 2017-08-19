@@ -17,5 +17,5 @@ $	ssh-keygen
 
 $	cat /root/.ssh/id_rsa.pub
 
-## Output
-ssh-rsa 
+## Output SSH Key
+ssh-rsa
