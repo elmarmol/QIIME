@@ -3,3 +3,4 @@
 STRING="Hola Mundo!"
 # print the contents of the variable on screen
 echo $STRING
+# End Script
